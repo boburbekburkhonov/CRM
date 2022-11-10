@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "groupName": "N1",
+        "courseId": 1,
+        "teacher": 2,
+        "kun": "DU-CHOR-JUMA",
+        "soat": "09:00-11-00"
+    },
+    {
+        "id": 2,
+        "groupName": "N2",
+        "courseId": 2,
+        "teacher": 5,
+        "kun": "SE-PAY-SHAN",
+        "soat": "09:00-11-00"
+    },
+    {
+        "id": 3,
+        "groupName": "N3",
+        "courseId": 3,
+        "teacher": 6,
+        "kun": "SE-PAY-SHAN",
+        "soat": "09:00-11-00"
+    }
+]

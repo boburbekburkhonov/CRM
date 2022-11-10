@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "courseName": "IOS",
+        "title": "Kursimiz 10 oy bo'lib frontend va backend yo'nalishlari bo'yicha o'qitiladi",
+        "price": "700 000"
+    },
+    {
+        "id": 2,
+        "courseName": "Frontend",
+        "title": "Frontend yo'nalishi bo'yicha 5 oy ta'lim berilada",
+        "price": "900 000"
+    },
+    {
+        "id": 3,
+        "courseName": "Backend",
+        "title": "Backend yo'nalishi bo'yicha 5 oy ta'lim berilada",
+        "price": "900 000"
+    }
+]
