@@ -8,7 +8,7 @@ export const getAdmin = (req, res) => {
   res.render('admin.ejs', {name: req.name})
 }
 
-// GET ADMIN GROUP
+// GETDMIN GROUP
 export const getAdminGroup = (req, res) => {
   const allGroups = read('groups.json')
   const allCourses = read('courses.json')
@@ -238,15 +238,17 @@ export const deleteTeacher = async (req, res, next) => {
   const allUsers = read('users.json')
   const allGroups = read('groups.json')
 
-  const filteredTeacher = allUsers.filter(e => e.id != id)
+  let filteredTeacher = allUsers.filter((e) => e.id != id);
 
-  const filteredGroups = allGroups.filter(e => e.teacher != id)
+  const filteredGroups = allGroups.filter((e) => e.teacher != id);
 
-  const foundGroup = allGroups.find(e => e.teacher == id)
+  const foundGroup = allGroups.find((e) => e.teacher == id);
 
-  const filteredUsers = filteredTeacher.filter(e => e.groupId != foundGroup.id)
+  if (foundGroup) {
+    filteredTeacher = filteredTeacher.filter((e) => e.groupId != foundGroup.id);
+  }
 
-  const newAllTeachers = await write('users.json', filteredUsers)
+  const newAllTeachers = await write("users.json", filteredTeacher);
 
   await write('groups.json', filteredGroups)
 

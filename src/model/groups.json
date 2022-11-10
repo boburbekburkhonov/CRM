@@ -8,14 +8,6 @@
         "soat": "09:00-11-00"
     },
     {
-        "id": 2,
-        "groupName": "N2",
-        "courseId": 2,
-        "teacher": 5,
-        "kun": "SE-PAY-SHAN",
-        "soat": "09:00-11-00"
-    },
-    {
         "id": 3,
         "groupName": "N3",
         "courseId": 3,

@@ -12,7 +12,7 @@
         "password": "stiv01",
         "number": "800844855866",
         "course": "IOS",
-        "groups": 1,
+        "groups": 2,
         "role": "teacher",
         "img": "/assets/images/stiv.jpg"
     },
@@ -53,14 +53,5 @@
         "groupId": 1,
         "role": "student",
         "img": "/assets/images/chorsh.jpg"
-    },
-    {
-        "id": 8,
-        "name": "Asad",
-        "password": "23",
-        "number": "+998902886519",
-        "groupId": 2,
-        "role": "student",
-        "img": "/assets/images/bruce.jpg"
     }
 ]

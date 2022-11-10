@@ -6,12 +6,6 @@
         "price": "700 000"
     },
     {
-        "id": 2,
-        "courseName": "Frontend",
-        "title": "Frontend yo'nalishi bo'yicha 5 oy ta'lim berilada",
-        "price": "900 000"
-    },
-    {
         "id": 3,
         "courseName": "Backend",
         "title": "Backend yo'nalishi bo'yicha 5 oy ta'lim berilada",
