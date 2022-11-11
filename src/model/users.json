@@ -22,7 +22,7 @@
     "password": "gates01",
     "number": "800844855861",
     "course": "Backend",
-    "groups": 1,
+    "groups": 0,
     "role": "teacher",
     "img": "/assets/images/gates.jpg"
   },
@@ -64,15 +64,6 @@
     "img": "/assets/images/bruce.jpg"
   },
   {
-    "id": 13,
-    "name": "Jovoh",
-    "password": "0",
-    "number": "+998902886519",
-    "groupId": 2,
-    "role": "student",
-    "img": "/assets/images/user.jpg"
-  },
-  {
     "id": 9,
     "name": "Shohruh",
     "password": "12",
@@ -80,32 +71,5 @@
     "groupId": 3,
     "role": "student",
     "img": "/assets/images/taylor.jpg"
-  },
-  {
-    "id": 12,
-    "name": "Jamshid",
-    "password": "9",
-    "number": "+998902886519",
-    "groupId": 3,
-    "role": "student",
-    "img": "/assets/images/user.jpg"
-  },
-  {
-    "id": 10,
-    "name": "kolin",
-    "password": "12",
-    "groupId": 4,
-    "number": "998902886519",
-    "role": "student",
-    "img": "/assets/images/IMG_20220716_131116_246.jpg"
-  },
-  {
-    "id": 11,
-    "name": "taylor",
-    "password": "2",
-    "groupId": 4,
-    "number": "998902886519",
-    "role": "student",
-    "img": "/assets/images/user.jpg"
   }
 ]

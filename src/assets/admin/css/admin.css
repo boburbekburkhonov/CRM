@@ -658,7 +658,30 @@ li:active {
 
 .homework-heading {
 	margin: 0;
-	/* color: #252636; */
 	color: red;
 	font-weight: 600;
+}
+
+/* STATISTIKA */
+
+.static {
+	padding: 20px 35px;
+	max-width: 500px;
+	width: 100%;
+	border: 7px solid hsl(260, 96%, 78%) !important;
+	border-radius: 50px;
+	background: #252636 !important;
+	color: #FFC107;
+}
+
+.static-heading {
+	margin: 0;
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.static-desc {
+	margin: 0;
+	font-weight: 700;
+	font-size: 30px;
 }

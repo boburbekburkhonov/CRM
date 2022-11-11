@@ -3,13 +3,13 @@
         "id": 1,
         "groupId": 3,
         "title": "Githubni cloneni qilish",
-        "isTodoHomework": true
+        "isTodoHomework": false
     },
     {
         "id": 2,
         "groupId": 3,
         "title": "Takrorlash",
-        "isTodoHomework": true
+        "isTodoHomework": false
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "id": 5,
         "groupId": 4,
         "title": "Random user",
-        "isTodoHomework": true
+        "isTodoHomework": false
     },
     {
         "id": 6,
@@ -37,14 +37,8 @@
     },
     {
         "id": 7,
-        "groupId": "2",
-        "title": "tailwind",
-        "isTodoHomework": false
-    },
-    {
-        "id": 8,
-        "groupId": "3",
-        "title": "Vue Js",
+        "groupId": "5",
+        "title": "responsive",
         "isTodoHomework": true
     }
 ]

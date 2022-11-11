@@ -85,7 +85,7 @@
 
       <div class="d-flex align-items-center mt-5">
         <div>
-          <label class="label-group">Ustozni rasmini kiriting</label>
+          <label class="label-group">O'quvchini rasmini kiriting</label>
           <div class="file-input">
             <input
               type="file"
@@ -114,7 +114,7 @@
           </div>
         </div>
 
-        <button class="add-btn ms-5">Add teacher</button>
+        <button class="add-btn ms-5">Add student</button>
       </div>
     </form>
 
@@ -133,7 +133,7 @@
 
               <div class="card-body-teacher-content">
                 <p class="card-body-teacher-number m-0">
-                  Group: <span class="number ms-1"> <%= element.group %></span>
+                  Group: <span class="number ms-1"> <%= element.group ? element.group : 'Guruh tugatildi'  %></span>
                 </p>
 
                 <p class="card-body-teacher-name m-0">

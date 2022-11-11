@@ -5,130 +5,160 @@ import { read, write } from "../utils/FS.js"
 
 //  GET ADMIN
 export const getAdmin = (req, res) => {
-  res.render('admin.ejs', {name: req.name})
-}
+  const allGroups = read("groups.json");
+  const allCourses = read("courses.json");
+  const allUsers = read("users.json");
+
+  const allStudents = allUsers.filter((e) => e.role == "student");
+
+  const allTeachers = allUsers.filter((e) => e.role == "teacher");
+
+  res.render("admin.ejs", {
+    name: req.name,
+    groups: allGroups.length,
+    courses: allCourses.length,
+    students: allStudents.length,
+    teachers: allTeachers.length,
+  });
+};
 
 // GETDMIN GROUP
 export const getAdminGroup = (req, res) => {
-  const allGroups = read('groups.json')
-  const allCourses = read('courses.json')
-  const allUsers = read('users.json');
+  const allGroups = read("groups.json");
+  const allCourses = read("courses.json");
+  const allUsers = read("users.json");
 
-  allGroups.forEach(e => allCourses.find(c => {
-    if(c.id == e.courseId){
-      e.courseId = c.courseName
-    }
-  }))
+  allGroups.forEach((e) =>
+    allCourses.find((c) => {
+      if (c.id == e.courseId) {
+        e.courseId = c.courseName;
+      }
+    })
+  );
 
-  allGroups.forEach(e => allUsers.find(u => {
-    if(e.teacher == u.id){
-      e.teacher = u.name,
-      e.number = u.number,
-      e.img = u.img
-    }
-  }))
+  allGroups.forEach((e) =>
+    allUsers.find((u) => {
+      if (e.teacher == u.id) {
+        (e.teacher = u.name), (e.number = u.number), (e.img = u.img);
+      }
+    })
+  );
 
   let courseId = [];
   let teacher = [];
 
-  allCourses.forEach(e => courseId.push(e.courseName))
+  allCourses.forEach((e) => courseId.push(e.courseName));
 
-  const filteredTeacher = allUsers.filter(e => e.role == 'teacher')
+  const filteredTeacher = allUsers.filter((e) => e.role == "teacher");
 
-  filteredTeacher.forEach(e => teacher.push(e.name))
+  filteredTeacher.forEach((e) => teacher.push(e.name));
 
-  res.render('./pages/group', {name: req.name, groups: allGroups, courseId, teacher:[... new Set(teacher)]})
-}
+  res.render("./pages/group", {
+    name: req.name,
+    groups: allGroups,
+    courseId,
+    teacher: [...new Set(teacher)],
+  });
+};
 
 // GET ADMIN TEACHER
 export const getAdminTeacher = (req, res) => {
-  const allUsers = read('users.json')
-  const allCourses = read('courses.json')
+  const allUsers = read("users.json");
+  const allCourses = read("courses.json");
 
-  const foundTeachers = allUsers.filter(e => e.role == 'teacher')
+  const foundTeachers = allUsers.filter((e) => e.role == "teacher");
 
-  if(!foundTeachers.length) {
-    return next(new errorHandlerError('Hozircha ustozlar mavjud emas!', 404))
+  if (!foundTeachers.length) {
+    return next(new errorHandlerError("Hozircha ustozlar mavjud emas!", 404));
   }
 
-  res.render('./pages/teacher', {name: req.name, foundTeachers, allCourses})
-}
+  res.render("./pages/teacher", { name: req.name, foundTeachers, allCourses });
+};
 
 // GET ADMIN COURSE
 
 export const getAdminCourse = (req, res) => {
-  res.render('./pages/course', {name: req.name, courses: read('courses.json')})
-}
+  res.render("./pages/course", {
+    name: req.name,
+    courses: read("courses.json"),
+  });
+};
 
 // GET ADMIN STUDENT
 
 export const getAdminStudent = (req, res) => {
-  const allUsers = read('users.json');
-  const allGroups = read('groups.json')
+  const allUsers = read("users.json");
+  const allGroups = read("groups.json");
 
-   allUsers.forEach(e => allGroups.find(g => {
-    if(e.groupId == g.id){
-      e.group = g.groupName
-    }
-  }))
+  allUsers.forEach((e) =>
+    allGroups.find((g) => {
+      if (e.groupId == g.id) {
+        e.group = g.groupName;
+      }
+    })
+  );
 
-  const filteredUsers = allUsers.filter(e => e.role == 'student')
+  const filteredUsers = allUsers.filter((e) => e.role == "student");
 
-  let groups = []
+  let groups = [];
 
-  allGroups.forEach(e => groups.push(e.groupName))
+  allGroups.forEach((e) => groups.push(e.groupName));
 
-  res.render('./pages/student', {name: req.name, filteredUsers, groupsName:[... new Set(groups)]})
-}
+  res.render("./pages/student", {
+    name: req.name,
+    filteredUsers,
+    groupsName: [...new Set(groups)],
+  });
+};
 
 // ADD COURSE
 
-export const addCourse = async (req, res, next)  => {
-  const { courseName, title, price } = req.body
+export const addCourse = async (req, res, next) => {
+  const { courseName, title, price } = req.body;
 
-  const allCourses = read('courses.json')
+  const allCourses = read("courses.json");
 
-  const foundCourse = allCourses.find(e => e.courseName === courseName)
+  const foundCourse = allCourses.find((e) => e.courseName === courseName);
 
-  if(foundCourse){
-    return next(new errorHandlerError('Bunday kurs allaqachon yaratilgan!', 400))
+  if (foundCourse) {
+    return next(
+      new errorHandlerError("Bunday kurs allaqachon yaratilgan!", 400)
+    );
   }
 
-  allCourses.push({id: allCourses.at(-1)?.id + 1 || 1, courseName, title, price})
+  allCourses.push({
+    id: allCourses.at(-1)?.id + 1 || 1,
+    courseName,
+    title,
+    price,
+  });
 
-  const newAllCourses = await write('courses.json', allCourses)
+  const newAllCourses = await write("courses.json", allCourses);
 
-  if(newAllCourses){
-    res.redirect('/admin/course')
+  if (newAllCourses) {
+    res.redirect("/admin/course");
   }
-}
+};
 
 // DELETE COURSE
 
 export const deleteCourse = async (req, res, next) => {
-  const {id} = req.params;
+  const { id } = req.params;
 
-  const allCourses = read('courses.json')
-  const allGroups = read('groups.json')
-  const allUsers = read('users.json');
+  const allCourses = read("courses.json");
+  const allGroups = read("groups.json");
 
-  const filteredCourse = allCourses.filter(e => e.id != id)
-  const filteredGroups = allGroups.filter(e => e.courseId != id)
+  const filteredCourse = allCourses.filter((e) => e.id != id);
+  const filteredGroups = allGroups.filter((e) => e.courseId != id);
 
-  const foundGroup = allGroups.find(e => e.courseId == id)
+  const newAllCourses = await write("courses.json", filteredCourse);
 
-  const filteredUsers = allUsers.filter(e => e.groupId != foundGroup.id)
+  await write("groups.json", filteredGroups);
 
-  const newAllCourses = await write('courses.json', filteredCourse)
-
-  await write('groups.json', filteredGroups)
-
-  await write('users.json', filteredUsers)
-
-  if(newAllCourses){
-    res.redirect('/admin/course')
+  if (newAllCourses) {
+    res.redirect("/admin/course");
   }
-}
+};
 
 // CREATE GROUP
 

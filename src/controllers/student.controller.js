@@ -1,12 +1,17 @@
+import { errorHandlerError } from "../errors/error.handler.errors.js";
 import { read, write } from "../utils/FS.js";
 
-export const getStudent = (req, res) => {
+export const getStudent = (req, res, next) => {
   const allUsers = read("users.json");
   const allGroups = read("groups.json");
   const allCourses = read("courses.json");
   const allHomeworks = read("homeworks.json");
 
   const foundStudent = allUsers.find((e) => e.id == req.id);
+
+  if (!foundStudent) {
+    return next(new errorHandlerError("Student not found", 404));
+  }
 
   const foundGroup = allGroups.find((g) => g.id == foundStudent.groupId);
   const foundCourse = allCourses.find((c) => c.id == foundGroup.courseId);
