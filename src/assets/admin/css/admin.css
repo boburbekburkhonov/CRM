@@ -643,3 +643,9 @@ li:active {
   height: 16px;
   margin-right: 4px;
 }
+
+/* TEACHER */
+
+.rows {
+	cursor: pointer;
+}

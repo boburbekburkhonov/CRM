@@ -1,57 +1,66 @@
 [
-    {
-        "id": 1,
-        "name": "Bobur",
-        "password": "161901",
-        "number": "+998902555655",
-        "role": "admin"
-    },
-    {
-        "id": 2,
-        "name": "Stiv Jobs",
-        "password": "stiv01",
-        "number": "800844855866",
-        "course": "IOS",
-        "groups": 2,
-        "role": "teacher",
-        "img": "/assets/images/stiv.jpg"
-    },
-    {
-        "id": 3,
-        "name": "Azim",
-        "password": "12345",
-        "number": "+998902886519",
-        "groupId": 3,
-        "role": "student",
-        "img": "/assets/images/taylor.jpg"
-    },
-    {
-        "id": 5,
-        "name": "Bill Gates",
-        "password": "gates01",
-        "number": "800844855861",
-        "course": "Backend",
-        "groups": 1,
-        "role": "teacher",
-        "img": "/assets/images/gates.jpg"
-    },
-    {
-        "id": 6,
-        "name": "Ilon Mask",
-        "password": "ilon01",
-        "number": "800844344566",
-        "course": "Frontend",
-        "groups": 1,
-        "role": "teacher",
-        "img": "/assets/images/musk.jpg"
-    },
-    {
-        "id": 7,
-        "name": "Behruz",
-        "password": "12",
-        "number": "+998902886519",
-        "groupId": 1,
-        "role": "student",
-        "img": "/assets/images/chorsh.jpg"
-    }
+  {
+    "id": 1,
+    "name": "Bobur",
+    "password": "161901",
+    "number": "+998902555655",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Stiv Jobs",
+    "password": "stiv01",
+    "number": "800844855866",
+    "course": "IOS",
+    "groups": 2,
+    "role": "teacher",
+    "img": "/assets/images/stiv.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Bill Gates",
+    "password": "gates01",
+    "number": "800844855861",
+    "course": "Backend",
+    "groups": 1,
+    "role": "teacher",
+    "img": "/assets/images/gates.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Ilon Mask",
+    "password": "ilon01",
+    "number": "800844344566",
+    "course": "Frontend",
+    "groups": 1,
+    "role": "teacher",
+    "img": "/assets/images/musk.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Behruz",
+    "password": "12",
+    "number": "+998902886519",
+    "groupId": 1,
+    "role": "student",
+    "img": "/assets/images/chorsh.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Asad",
+    "password": "12",
+    "number": "+998902886519",
+    "groupId": 2,
+    "role": "student",
+    "img": "/assets/images/bruce.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Azim",
+    "password": "12",
+    "number": "+998902886519",
+    "groupId": 3,
+    "role": "student",
+    "img": "/assets/images/taylor.jpg"
+  }
 ]
