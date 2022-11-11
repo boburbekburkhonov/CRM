@@ -1,11 +1,50 @@
 [
-  {
-    "id":1,
-    "groupId":"3",
-    "title": "Githubni cloneni qilish",
-    "img":"/assets/images/user.jpg",
-    "qildi":[
-      3
-    ]
-  }
+    {
+        "id": 1,
+        "groupId": 3,
+        "title": "Githubni cloneni qilish",
+        "isTodoHomework": true
+    },
+    {
+        "id": 2,
+        "groupId": 3,
+        "title": "Takrorlash",
+        "isTodoHomework": true
+    },
+    {
+        "id": 3,
+        "groupId": 1,
+        "title": "CRUD qilish",
+        "isTodoHomework": false
+    },
+    {
+        "id": 4,
+        "groupId": 2,
+        "title": "Responsive",
+        "isTodoHomework": false
+    },
+    {
+        "id": 5,
+        "groupId": 4,
+        "title": "Random user",
+        "isTodoHomework": true
+    },
+    {
+        "id": 6,
+        "groupId": "1",
+        "title": "Bookshelter",
+        "isTodoHomework": false
+    },
+    {
+        "id": 7,
+        "groupId": "2",
+        "title": "tailwind",
+        "isTodoHomework": false
+    },
+    {
+        "id": 8,
+        "groupId": "3",
+        "title": "Vue Js",
+        "isTodoHomework": true
+    }
 ]

@@ -46,6 +46,15 @@
     "img": "/assets/images/chorsh.jpg"
   },
   {
+    "id": 14,
+    "name": "Yodgor",
+    "password": "5",
+    "number": "+998902886519",
+    "groupId": 1,
+    "role": "student",
+    "img": "/assets/images/user.jpg"
+  },
+  {
     "id": 8,
     "name": "Asad",
     "password": "12",
@@ -55,12 +64,48 @@
     "img": "/assets/images/bruce.jpg"
   },
   {
+    "id": 13,
+    "name": "Jovoh",
+    "password": "0",
+    "number": "+998902886519",
+    "groupId": 2,
+    "role": "student",
+    "img": "/assets/images/user.jpg"
+  },
+  {
     "id": 9,
-    "name": "Azim",
+    "name": "Shohruh",
     "password": "12",
     "number": "+998902886519",
     "groupId": 3,
     "role": "student",
     "img": "/assets/images/taylor.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Jamshid",
+    "password": "9",
+    "number": "+998902886519",
+    "groupId": 3,
+    "role": "student",
+    "img": "/assets/images/user.jpg"
+  },
+  {
+    "id": 10,
+    "name": "kolin",
+    "password": "12",
+    "groupId": 4,
+    "number": "998902886519",
+    "role": "student",
+    "img": "/assets/images/IMG_20220716_131116_246.jpg"
+  },
+  {
+    "id": 11,
+    "name": "taylor",
+    "password": "2",
+    "groupId": 4,
+    "number": "998902886519",
+    "role": "student",
+    "img": "/assets/images/user.jpg"
   }
 ]

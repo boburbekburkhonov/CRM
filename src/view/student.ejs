@@ -25,7 +25,7 @@
         <img
              class="rounded-pill img-fluid"
              width="65"
-             src="/assets/images/user.jpg"
+             src="<%= foundStudent.img %> "
              alt="">
         <div class="ms-2">
           <h5 class="fs-6 mb-0">
@@ -36,7 +36,7 @@
 
       <ul class="categories list-unstyled">
         <li class="">
-          <i class="uil-map-marker-admin"></i><a href="#">Groups</a>
+          <i class="uil-map-marker-teacher"></i><a href="#">Uy ishi</a>
         </li>
       </ul>
     </aside>
@@ -55,10 +55,78 @@
         </div>
       </nav>
 
+      <div class="d-flex align-items-center">
+        <!-- STUDENT -->
+        <div class="student-card wrapper-groups d-flex align-items-center justify-content-evenly flex-wrap">
+          <div class="card" style="width: 19rem;">
+            <div class="card-body p-0">
+              <div class="card-header">
+                <h3 class="card-title"><%= foundStudent.name %></h3>
+              </div>
+             <div class="card-body">
+              <div class="card-body-teacher d-flex align-items-center justify-content-between">
+                <img class="img-teacher" src="<%= foundStudent.img %>" alt="user" width="80" height="80">
+
+                <div class="card-body-teacher-content">
+                  <p class="card-body-teacher-number m-0">
+                    O'quvchini ismi: <span class="number ms-1"> <%= foundStudent.name %></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-news  mt-3">
+                <div class="card-news-wrapper d-flex align-items-center justify-content-between">
+                  <p class="card-news-day">Telefon:</p>
+                  <p class="card-news-day-week"><%= foundStudent.number %></p>
+                </div>
+
+                <div class="card-news-wrapper d-flex align-items-center justify-content-between mt-2">
+                  <p class="card-news-day">Dars kunlari:</p>
+                  <p class="card-news-day-week"><%= foundStudent.kun %></p>
+                </div>
+
+                <div class="card-news-wrapper d-flex align-items-center justify-content-between mt-2">
+                  <p class="card-news-day">Dars soatlari:</p>
+                  <p class="card-news-day-week"><%= foundStudent.soat %></p>
+                </div>
+
+                <div class="card-news-wrapper d-flex align-items-center justify-content-between mt-2">
+                  <p class="card-news-day">O'quvchini yo'nalishi:</p>
+                  <p class="card-news-day-week"><%= foundStudent.courseName %></p>
+                </div>
+
+              </div>
+
+             </div>
+            </div>
+          </div>
+      </div>
+      <!-- HOMEWORKS -->
+      <div class="wrapper-groups d-flex align-items-center justify-content-evenly flex-wrap flex-column">
+
+        <% foundHomeworks.forEach(element => { %>
+          <div class="card" style="width: 77%">
+            <div class="card-body p-0">
+              <div class="card-header <%= element.isTodoHomework ? 'bg-dark' : 'bg-danger' %> ">
+                <h3 class="card-title">Uy ishi</h3>
+              </div>
+             <div class="card-body d-flex flex-column align-items-center">
+              <h3 class="text-center homework-heading <%= element.isTodoHomework ? 'text-dark' : 'text-danger' %>"><%= element.title %> </h3>
+
+              <button class="homework mt-4 <%= element.isTodoHomework ? 'btn btn-dark' : 'btn btn-danger' %>" id="<%= element.id %> "><%= element.isTodoHomework ? `Bajardim` : 'Bajarmadim' %></button>
+             </div>
+            </div>
+          </div>
+        <% }) %>
+
+      </div>
+
+      </div>
 
     </section>
 
     <script src="/assets/admin/js/admin.js"></script>
+    <script src="/assets/student/student.js"></script>
 
   </body>
   </html>

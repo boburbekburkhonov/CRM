@@ -649,3 +649,16 @@ li:active {
 .rows {
 	cursor: pointer;
 }
+
+/* STUDENT */
+
+.student-card {
+	max-width: 380px;
+}
+
+.homework-heading {
+	margin: 0;
+	/* color: #252636; */
+	color: red;
+	font-weight: 600;
+}

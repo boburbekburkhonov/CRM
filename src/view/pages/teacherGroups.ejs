@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher</title>
+</head>
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/admin/css/admin.css">
+    <link rel="stylesheet" href="/assets/teacher/teacher.css">
+    <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Teacher</title>
+  </head>
+  <body>
+    <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+      <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
+      <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+        <img
+             class="rounded-pill img-fluid"
+             width="65"
+             src="<%= foundTeacher.img %> "
+             alt="">
+        <div class="ms-2">
+          <h5 class="fs-6 mb-0">
+            <a class="text-decoration-none" href="#">
+              <%= name %>
+            </a>
+          </h5>
+        </div>
+      </div>
+
+      <ul class="categories list-unstyled">
+        <li class="">
+          <i class="uil-map-marker-admin"></i><a href="/teacher">Groups</a>
+        </li>
+      </ul>
+    </aside>
+
+    <section id="wrapper">
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid mx-2">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">admin<span class="main-color">CRM</span></a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="d-flex flex-wrap">
+
+        <div class="wrapper-groups d-flex align-items-center justify-content-evenly flex-wrap">
+          <div class="card" style="width: 19rem;">
+            <div class="card-body p-0">
+              <div class="card-header">
+                <h3 class="card-title"><%= foundTeacher.name %></h3>
+              </div>
+             <div class="card-body">
+              <div class="card-body-teacher d-flex align-items-center justify-content-between">
+                <img class="img-teacher" src="<%= foundTeacher.img %>" alt="user" width="80" height="80">
+
+                <div class="card-body-teacher-content">
+                  <p class="card-body-teacher-name m-0">
+                    Role: <span class="teacher ms-1"> <%= foundTeacher.role.toUpperCase() %></span>
+                  </p>
+
+                  <p class="card-body-teacher-number m-0">
+                    Teacher: <span class="number ms-1"> <%= foundTeacher.name %></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card-news  mt-3">
+                <div class="card-news-wrapper d-flex align-items-center justify-content-between">
+                  <p class="card-news-day">Tel raqam:</p>
+                  <p class="card-news-day-week"><%= foundTeacher.number %></p>
+                </div>
+
+                <div class="card-news-wrapper d-flex align-items-center justify-content-between mt-3">
+                  <p class="card-news-day">Darslar soni:</p>
+                  <p class="card-news-day-week"><%= foundTeacher.groups %></p>
+                </div>
+
+              </div>
+
+             </div>
+            </div>
+          </div>
+      </div>
+
+      <table class="table caption table-dark table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">O'quvchining ismi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% foundUsers.map((user, i) => { %>
+            <tr class="rows">
+                <th scope="row"><%= i + 1 %></th>
+                <td><%= user.name %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MODAL -->
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Yangi uyga vazifa berish</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="/teacher/homework/<%= groupId %> " enctype="multipart/form-data" method="post">
+              <textarea required class="form-control textarea" type="text" name="title" placeholder="Uyga vazifa nomi" ></textarea>
+              <button class="btn btn-primary mt-3">Add homework</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </section>
+
+    <script src="/assets/admin/js/admin.js"></script>
+    <script src="/assets/teacher/teacherModal.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+  </html>
+</body>
+</html>
