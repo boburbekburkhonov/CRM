@@ -24,21 +24,9 @@
         "isTodoHomework": false
     },
     {
-        "id": 5,
-        "groupId": 4,
-        "title": "Random user",
-        "isTodoHomework": false
-    },
-    {
-        "id": 6,
-        "groupId": "1",
-        "title": "Bookshelter",
-        "isTodoHomework": false
-    },
-    {
-        "id": 7,
-        "groupId": "5",
-        "title": "responsive",
-        "isTodoHomework": true
+      "id": 5,
+      "groupId": 4,
+      "title": "Random user",
+      "isTodoHomework": true
     }
 ]

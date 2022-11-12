@@ -120,7 +120,7 @@
 
     <h3 class="group-heading">Mavjud o'quvchilar</h3>
 
-    <div class="wrapper-groups d-flex align-items-center justify-content-between flex-wrap">
+    <div class="wrapper-groups d-flex align-items-center justify-content-between flex-wrap pb-5">
       <% filteredUsers.map(element => { %>
         <div class="card" style="width: 19rem;">
           <div class="card-body p-0">
@@ -133,7 +133,7 @@
 
               <div class="card-body-teacher-content">
                 <p class="card-body-teacher-number m-0">
-                  Group: <span class="number ms-1"> <%= element.group ? element.group : 'Guruh tugatildi'  %></span>
+                  Group: <span class="ms-1 <%= element.group ? 'number' : 'text-danger h6 fw-bold'  %>"> <%= element.group ? element.group : 'Guruh tugatildi'  %></span>
                 </p>
 
                 <p class="card-body-teacher-name m-0">

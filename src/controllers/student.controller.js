@@ -14,6 +14,11 @@ export const getStudent = (req, res, next) => {
   }
 
   const foundGroup = allGroups.find((g) => g.id == foundStudent.groupId);
+
+  if (!foundGroup) {
+    return next(new errorHandlerError("Sizni guruhingiz yopildi!", 404));
+  }
+
   const foundCourse = allCourses.find((c) => c.id == foundGroup.courseId);
 
   const foundHomeworks = allHomeworks.filter(

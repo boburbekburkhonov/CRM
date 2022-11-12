@@ -104,7 +104,7 @@
       <!-- HOMEWORKS -->
       <div class="wrapper-groups d-flex align-items-center justify-content-evenly flex-wrap flex-column">
 
-        <% foundHomeworks.forEach(element => { %>
+        <% foundHomeworks.map(element => { %>
           <div class="card" style="width: 77%">
             <div class="card-body p-0">
               <div class="card-header <%= element.isTodoHomework ? 'bg-dark' : 'bg-danger' %> ">
