@@ -685,3 +685,32 @@ li:active {
 	font-weight: 700;
 	font-size: 30px;
 }
+
+/* ANIMATION */
+
+.block{
+  height: 90px;
+  width:400px;
+  margin:0 auto;
+/*   background: #343436; */
+}
+.block p{
+	font-weight: 700;
+	font-size: 30px;
+  text-align:center;
+  color:#ff0000;
+  text-transform: uppercase;
+  padding-top: 35px;
+  animation: text 5s infinite linear;
+  padding-left: 80%;
+  white-space: nowrap;
+}
+@keyframes text {
+  0%{
+    transform: translate(0, 0);
+  }
+
+  100%{
+    transform: translate(-160%, 0);
+  }
+}

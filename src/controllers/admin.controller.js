@@ -272,12 +272,6 @@ export const deleteTeacher = async (req, res, next) => {
 
   const filteredGroups = allGroups.filter((e) => e.teacher != id);
 
-  const foundGroup = allGroups.find((e) => e.teacher == id);
-
-  if (foundGroup) {
-    filteredTeacher = filteredTeacher.filter((e) => e.groupId != foundGroup.id);
-  }
-
   const newAllTeachers = await write("users.json", filteredTeacher);
 
   await write('groups.json', filteredGroups)
