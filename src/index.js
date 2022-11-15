@@ -11,18 +11,19 @@ import { errorHandler } from './middlewares/errorHandler.middleware.js';
 const app = express();
 dotenv.config();
 
+// MIDDLEWARES
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cookieParser())
 app.use(expressFileupload())
 app.use(routes)
-app.use('/assets', express.static(path.join(process.cwd(), 'src', 'assets')))
-app.use('/uploads', express.static(path.join(process.cwd(), 'src', 'uploads')))
+app.use("/assets", express.static(path.join(process.cwd(), "src", "assets")));
 
-
+// SETTINGS
 app.set('view engine', 'ejs')
 app.set('views', path.join(process.cwd(), 'src', 'view'))
 
+// ERRORS
 app.use(errorHandler)
 
 app.all('/*', (req, res) => res.render('error.page.ejs', { message: req.url + ' not found', status: 404 }))

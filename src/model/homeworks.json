@@ -24,9 +24,9 @@
         "isTodoHomework": false
     },
     {
-      "id": 5,
-      "groupId": 4,
-      "title": "Random user",
-      "isTodoHomework": true
+        "id": 5,
+        "groupId": 4,
+        "title": "Random user",
+        "isTodoHomework": false
     }
 ]

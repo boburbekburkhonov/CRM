@@ -46,15 +46,6 @@
         "img": "/assets/images/chorsh.jpg"
     },
     {
-        "id": 8,
-        "name": "Asad",
-        "password": "12",
-        "number": "+998902886519",
-        "groupId": 2,
-        "role": "student",
-        "img": "/assets/images/bruce.jpg"
-    },
-    {
         "id": 9,
         "name": "Shohruh",
         "password": "12",
@@ -78,6 +69,15 @@
         "password": "2",
         "groupId": 1,
         "number": "15",
+        "role": "student",
+        "img": "/assets/images/user.jpg"
+    },
+    {
+        "id": 12,
+        "name": "bradley",
+        "password": "3",
+        "groupId": 2,
+        "number": "34",
         "role": "student",
         "img": "/assets/images/user.jpg"
     }
